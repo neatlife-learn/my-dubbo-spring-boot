@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.apache.dubbo</groupId>
+        <artifactId>dubbo-spring-boot-parent</artifactId>
+        <version>2.7.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.demo</groupId>
+    <artifactId>my-dubbo-spring-boot</artifactId>
+    <packaging>pom</packaging>
+    <name>my-dubbo-spring-boot</name>
+    <description>项目外层模块，组织以上3个模块 非必须，可以提供一些子模块可以复用的依赖，属性等</description>
+
+    <properties>
+        <dubbo.version>2.7.1</dubbo.version>
+        <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
+    </properties>
+
+    <modules>
+        <module>my-api</module>
+        <module>my-provider</module>
+        <module>my-consumer</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
